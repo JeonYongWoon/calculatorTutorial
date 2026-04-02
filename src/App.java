@@ -15,9 +15,8 @@ public class App {
 
             System.out.print("사칙연산 기호(+,-,*,/)를 입력하세요 : ");
             char arithmetic = sc.next().charAt(0);
-
-
-            int result = cal.calculate(fstNum, secNum, arithmetic);
+            OperatorType op = OperatorType.fromChar(arithmetic);
+            int result = cal.calculate(fstNum, secNum, op);
 
             System.out.println("결과 : " + result + " / 전체 결과 : " + cal.getResults());
             System.out.println("삭제를 원하면 remove 입력, 계속하려면 아무 키나 입력 : ");
