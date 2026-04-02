@@ -3,31 +3,26 @@ import java.util.ArrayList;
 public class Calculator {
     private ArrayList<Integer> results = new ArrayList<>();
 
-    public int calculate(int fstNum, int secNum, char arithmetic) {
+    public int calculate(int fstNum, int secNum, OperatorType op) {
         int result = 0;
 
-        switch (arithmetic) {
-            case '+':
+        switch (op) {
+            case ADD:
                 result = fstNum + secNum;
                 break;
-            case '-':
+            case SUB:
                 result = fstNum - secNum;
                 break;
-            case '*':
+            case MUL:
                 result = fstNum * secNum;
                 break;
-            case '/':
+            case DIV:
                 if (secNum == 0) {
-                    System.out.println("나눗셈 연산에서 분모에 0이 입력될 수 없습니다.");
+                    System.out.println("0으로 나눌 수 없습니다.");
                     return 0;
                 }
                 result = fstNum / secNum;
                 break;
-            default:
-                System.out.println("잘못된 연산기호입니다.");
-                return 0;
-
-
         }
 
         results.add(result);
